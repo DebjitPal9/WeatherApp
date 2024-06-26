@@ -9,7 +9,7 @@ function Manager(props){
   const utc = d.getTime() + d.getTimezoneOffset() * 60000  + (1000 * weather.timezone)
   const newd = new Date(utc)
   return (
-      <div className="flex flex-col bg-sky-100 rounded p-8  w-1/4 my-2">
+      <div className="flex flex-col bg-sky-100 rounded p-8  w-full my-2 max-w-xs">
         <div className="font-bold text-xl">{weather.name}, {weather.sys.country}</div>
         <div className="text-sm text-gray-500">{newd.getDate()}-{(newd.getMonth()<10)?'0'+newd.getMonth():newd.getMonth()}-{newd.getFullYear()}</div>
         <div className="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-24 w-24">
