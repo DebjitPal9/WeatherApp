@@ -1,2 +1,2 @@
 # WeatherApp
- weather app using open weather
+ weather app using open weather API
