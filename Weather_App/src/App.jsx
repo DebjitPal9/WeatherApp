@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import Manager from './Components/Manager'
 import GeoCoding from './Components/GeoCoding'
+import Manager from './Components/Manager';
 function App() {
    const [data, setData] = useState();
    //  useEffect(() => {
@@ -34,7 +34,10 @@ function App() {
       console.log(lat + " " + lon);
    }
    return (
-      <GeoCoding handler={handleLoc} />
+      <>
+      <GeoCoding handler={handleLoc}/>
+      <Manager/>
+      </>
    )
 
 }
