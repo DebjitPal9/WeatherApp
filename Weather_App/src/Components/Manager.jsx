@@ -9,14 +9,12 @@ function Manager(props){
   const utc = d.getTime() + d.getTimezoneOffset() * 60000  + (1000 * weather.timezone)
   const newd = new Date(utc)
   return (
-    
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="flex flex-col bg-white rounded p-4 w-full max-w-xs">
+      <div className="flex flex-col bg-white rounded p-4 w-full max-w-xs my-2">
         <div className="font-bold text-xl">{weather.name}, {weather.sys.country}</div>
         <div className="text-sm text-gray-500">{newd.getDate()}-{(newd.getMonth()<10)?'0'+newd.getMonth():newd.getMonth()}-{newd.getFullYear()}</div>
         <div className="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-24 w-24">
           {/* <svg className="w-32 h-32" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg> */}
-          <img class="weather-icon" src={`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt="Weather icon"></img>
+          <img className="rounded-full w-full" src={`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt="Weather icon"></img>
         </div>
         <div className="flex flex-row items-center justify-center mt-6">
           <div className="font-medium text-6xl">{Math.floor(weather.main.temp)}°</div>
@@ -51,7 +49,6 @@ function Manager(props){
           </div>
         </div>
       </div>
-    </div>
   )}
   return (
     <div>Select Location to display weather</div>
