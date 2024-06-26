@@ -3,11 +3,11 @@ import React, { useState } from "react";
 function GeoCoding(props) {
     const [data, setData] = useState([]);
     const [loc, setLoc] = useState("");
-
+    const key="";
     function handleClick() {
         if(loc){
         setLoc("");
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${loc}&limit=3&appid=09e876728d98d5b64f440c7f47373d6e`)
+        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${loc}&limit=3&appid=${key}`)
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
