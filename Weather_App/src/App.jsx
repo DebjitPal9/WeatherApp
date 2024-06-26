@@ -1,6 +1,5 @@
 import React,{ useState, useEffect} from 'react'
 import Manager from './Components/Manager'
-
 function App() {
   const [data, setData] = useState();
    useEffect(() => {
