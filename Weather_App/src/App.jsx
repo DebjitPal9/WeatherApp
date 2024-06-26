@@ -21,8 +21,9 @@ function App() {
    //     </div>
    //   </>
    // )
-   const handleLoc = (lat, lon) => {
-      fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=2&appid=ee22166bcb5ed367827f2147e80762a5`)
+   const handleLoc = async (lat, lon) => {
+      // await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=5&units=metric&appid=ee22166bcb5ed367827f2147e80762a5`)
+      await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=ee22166bcb5ed367827f2147e80762a5`)
          .then((response) => response.json())
          .then((data) => {
             console.log(data);
@@ -36,7 +37,7 @@ function App() {
    return (
       <>
       <GeoCoding handler={handleLoc}/>
-      <Manager/>
+      <Manager weather = {data}/>
       </>
    )
 

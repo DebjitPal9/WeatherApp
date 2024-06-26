@@ -29,7 +29,7 @@ function GeoCoding(props) {
             <p>
                 <h2 className="font-mono font-bold">Search Results(Click to view):</h2>
                 <ul >
-                    {data ? data.map((loc, index) => <li className ="max-w-lg"><div className="no-underline hover:underline hover:cursor-pointer" onClick={() => props.handler(loc.lat, loc.lon)} key={index}> {loc.name}, {loc.state}, {loc.country}</div> </li>) : <div>Loading ...</div>}
+                    {data ? data.map((loc, index) => <li className ="max-w-lg" key={index}><div className="no-underline hover:underline hover:cursor-pointer" onClick={() => props.handler(loc.lat, loc.lon)}> {loc.name}, {loc.state}, {loc.country}</div> </li>) : <div>Loading ...</div>}
                 </ul>
             </p>
         </div>
