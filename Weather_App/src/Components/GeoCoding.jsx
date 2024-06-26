@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function GeoCoding() {
+function GeoCoding(props) {
     const [data, setData] = useState([]);
     const [loc, setLoc] = useState("");
 
@@ -22,7 +22,7 @@ function GeoCoding() {
         <div>
             <input type="text" value={loc} onChange={location} />
             <button onClick={handleClick}>Get data</button>
-            {data ? data.map((loc, index) => <div key={index}> {loc.name}, {loc.state}, {loc.country}</div>) : <div>Loading ...</div>}
+            {data ? data.map((loc, index) => <div onClick={()=>props.handler(loc.lat,loc.lon)} key={index}> {loc.name}, {loc.state}, {loc.country}</div>) : <div>Loading ...</div>}
         </div>
     )
 }
