@@ -3,7 +3,7 @@ import GeoCoding from './Components/GeoCoding'
 import Manager from './Components/Manager';
 function App() {
    const [data, setData] = useState();
-   const key="";
+   const key="ee22166bcb5ed367827f2147e80762a5";
    const handleLoc = async (lat, lon) => {
       await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`)
          .then((response) => response.json())

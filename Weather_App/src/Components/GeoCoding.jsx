@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function GeoCoding(props) {
     const [data, setData] = useState([]);
     const [loc, setLoc] = useState("");
-    const key="";
+    const key="ee22166bcb5ed367827f2147e80762a5";
     function handleClick() {
         if(loc){
         setLoc("");
@@ -29,8 +29,8 @@ function GeoCoding(props) {
                 { data[0]?  <h1 className="font-mono w-5/12">Search Results(Click to view):</h1> : <></>
                 // <h1 className="font-mono">Search Results(Click to view):</h1>
                 }
-                <ul className=" w-1/3">
-                    {data ? data.map((loc, index) => <li className ="max-w-lg w-fit" key={index}><div className="no-underline hover:underline hover:cursor-pointer" onClick={() => props.handler(loc.lat, loc.lon)}> {loc.name}, {loc.state}, {loc.country}</div> </li>) : <div>Loading ...</div>}
+                <ul className="w-fit text-sm font-medium text-gray-900 bg-sky-100 border border-blue-200 rounded-lg">
+                    {data ? data.map((loc, index) => <li className ="px-4 py-2 border-b border-blue-200" key={index}><div className="no-underline hover:underline hover:cursor-pointer" onClick={() => props.handler(loc.lat, loc.lon)}> {loc.name}, {loc.state}, {loc.country}</div> </li>) : <div>Loading ...</div>}
                 </ul>
             </div>
         </div>
