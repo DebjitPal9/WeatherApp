@@ -3,7 +3,9 @@ import React, { useState } from "react";
 function GeoCoding(props) {
     const [data, setData] = useState([]);
     const [loc, setLoc] = useState("");
-    const key="ee22166bcb5ed367827f2147e80762a5";
+    const key=""; 
+    //Key should be taken from the operweathermap API website
+    //It is hidden for security purposes
     function handleClick() {
         if(loc){
         setLoc("");
